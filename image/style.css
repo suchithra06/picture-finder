@@ -1,0 +1,129 @@
+:root {
+  --primary: #6c63ff;
+  --secondary: #f5f7fa;
+  --dark: #333;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+
+header {
+  background-color: var(--primary);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  gap: 1rem;
+}
+
+#search-input {
+  width: 300px;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+#search-button {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+#search-button:hover {
+  background-color: #5750d8;
+}
+
+#results-grid {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.search-result {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.search-result:hover {
+  transform: translateY(-5px);
+}
+
+.search-result img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.search-result a {
+  display: block;
+  padding: 0.75rem;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.search-result a:hover {
+  background-color: var(--secondary);
+}
+
+#show-more-button {
+  display: none;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius);
+  margin: 2rem auto;
+  display: block;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+#show-more-button:hover {
+  background-color: #5750d8;
+}
+
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  #search-input {
+    width: 90%;
+  }
+}
